@@ -4,6 +4,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 
+#Use to upload photos
+gem 'carrierwave'
+
+#Use along with carrierwave/S3
+gem 'fog'
+
+#Use with carrierwave
+gem 'mini_magick', '~> 4.2.0'
+
+# For pagination
+gem 'kaminari'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,7 +41,7 @@ group :production do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -48,4 +60,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'annotate', '~> 2.6.8'
+
+  gem 'dotenv-rails'
 end

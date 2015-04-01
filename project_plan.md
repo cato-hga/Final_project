@@ -13,8 +13,9 @@
 3. User should be able to sign in, and out.
 4. User should be able to create different occasions.
 5. User should be able to create different people.
-6. User should be able to show prior gifts that were given.
-7. User should be able to upload an avatar.
+6. User should be able to create a gift given section for Special_Occasion and Recipients
+7. User should be able to show prior gifts that were given.
+8. User should be able to upload an avatar.
 
 ## Models
 1. User Model: name:string email:string password_digest:string avatar:string

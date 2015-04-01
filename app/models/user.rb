@@ -12,4 +12,10 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :recipients
+  has_many :special_occasions
+  has_many :gift_givens
+  
+  mount_uploader :avatar, AvatarUploader
+
 end
