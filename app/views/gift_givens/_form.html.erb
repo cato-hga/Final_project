@@ -1,0 +1,21 @@
+<%= form_for(@gift_given) do |f| %>
+  <% if @gift_given.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gift_given.errors.count, "error") %> prohibited this gift_given from being saved:</h2>
+
+      <ul>
+      <% @gift_given.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :gift_name %><br>
+    <%= f.text_field :gift_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

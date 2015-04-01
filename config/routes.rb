@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :gift_givens
+
+  resources :special_occasions
+
+  resources :recipients
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

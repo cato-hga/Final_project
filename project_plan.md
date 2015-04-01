@@ -17,10 +17,10 @@
 7. User should be able to upload an avatar.
 
 ## Models
-1. User Model: first_name:string last_name:string email:string password_digest:string
-2. Occasion Model: name:string
+1. User Model: name:string email:string password_digest:string avatar:string
+2. Special_Occasion Model: name:string
 3. Recipient Model: name:string birthday:string relationship:string notes:text
-4. Gifts_Given Model : name:string
+4. Gift_Given Model : gift_name:string
 
 
 

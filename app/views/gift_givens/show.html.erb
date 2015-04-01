@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gift name:</strong>
+  <%= @gift_given.gift_name %>
+</p>
+
+<%= link_to 'Edit', edit_gift_given_path(@gift_given) %> |
+<%= link_to 'Back', gift_givens_path %>
