@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   root 'session#welcome'
-
-  post 'signin', to: 'session#signin'
-  get 'signin', to: 'session#signin'
-  get 'signup', to: 'session#signup'
-  delete 'signout', to: 'session#signout'
+  
 
   post 'signin', to: 'session#signin'
   get 'signup', to: 'session#signup'
