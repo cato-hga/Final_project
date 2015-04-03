@@ -1,13 +1,17 @@
 class SessionController < ApplicationController
   def index
-    @user = User.new
+
   end
 
 
   def welcome
 
   end
+
   def signup
+    @user = User.new
+  end
+  def signup_entry
     user = User.new(name: params[:name], email: params[:email], password: params[:password])
 
     if user.save
