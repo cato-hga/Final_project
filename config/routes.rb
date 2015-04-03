@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  get 'session/signup'
+    post 'session/signin'
+    delete 'session/signout'
 
-  get 'welcome/index'
+
+
+
+
+  ActiveAdmin.routes(self)
+
+  root 'session#index'
+
+  get 'session/index'
 
   resources :gift_givens
 

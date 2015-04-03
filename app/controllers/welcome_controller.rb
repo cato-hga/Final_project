@@ -1,4 +1,7 @@
-class WelcomeController < ApplicationController
-  def index
-  end
-end
+# class WelcomeController < ApplicationController
+#  # def index
+#     @user = User.new
+#   end
+#
+#
+# end
