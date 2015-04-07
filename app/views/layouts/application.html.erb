@@ -9,11 +9,10 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!--Nav bar start-->
@@ -26,15 +25,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Giftgarage</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -47,24 +43,33 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign Up", signup_path %></li>
+        <form class="navbar-form navbar-right">
+        <a> <%= link_to "Sign Up", signup_path, class:"btn btn-warning" %></a>
+        </form>
       </ul>
 
       <%= form_tag signin_path, class:"navbar-form navbar-right"  do %>
-        <%= text_field_tag "Email", nil, class: "form-control" , placeholder: "Email" %>
-        <%= password_field_tag "Password", nil, class: "form-control", placeholder: "Password" %>
+        <%= text_field_tag "email", nil, class: "form-control" , placeholder: "Email" %>
+        <%= password_field_tag "password", nil, class: "form-control", placeholder: "Password" %>
         <a><%= submit_tag "Sign In", class:"btn btn-primary" %></a>
         <% end %>
 
-      </form>
     </div>
   </div>
 </nav>
 <!--Nav bar end-->
 
-<%= render "layouts/notice" %>
+
+<!-- For Current User-->
+<div class="container">
+  <% if signed_in? %>
+      <p id="sign" class="navbar-text navbar-right"> Signed in as, <%= link_to current_user.name  %></p>
+      <a><%= link_to 'Signout', signout_path, method: :delete %></a>
+  <% end %>
+</div>
+<!-- Current User End-->
+
+<%= render 'layouts/notice' %>
 
 <%= yield %>
 

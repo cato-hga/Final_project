@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'session#welcome'
-  
+
 
   post 'signin', to: 'session#signin'
   get 'signup', to: 'session#signup'

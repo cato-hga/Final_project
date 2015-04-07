@@ -15,10 +15,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :birthday %><br>
-    <%= f.text_field :birthday %>
-  </div>
+
   <div class="field">
     <%= f.label :relationship %><br>
     <%= f.text_field :relationship %>
@@ -28,6 +25,6 @@
     <%= f.text_area :notes %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-primary" %>
   </div>
 <% end %>

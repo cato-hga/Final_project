@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402202712) do
+ActiveRecord::Schema.define(version: 20150405015248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,23 +44,22 @@ ActiveRecord::Schema.define(version: 20150402202712) do
 
   create_table "recipients", force: :cascade do |t|
     t.string   "name"
-    t.string   "birthday"
     t.string   "relationship"
     t.text     "notes"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "user_id"
   end
-
-  add_index "recipients", ["user_id"], name: "index_recipients_on_user_id", using: :btree
 
   create_table "special_occasions", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.string   "recipient"
+    t.integer  "recipient_id"
   end
 
+  add_index "special_occasions", ["recipient_id"], name: "index_special_occasions_on_recipient_id", using: :btree
   add_index "special_occasions", ["user_id"], name: "index_special_occasions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -75,6 +74,6 @@ ActiveRecord::Schema.define(version: 20150402202712) do
 
   add_foreign_key "gift_givens", "recipients"
   add_foreign_key "gift_givens", "special_occasions"
-  add_foreign_key "recipients", "users"
+  add_foreign_key "special_occasions", "recipients"
   add_foreign_key "special_occasions", "users"
 end

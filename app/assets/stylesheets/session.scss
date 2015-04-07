@@ -1,3 +1,20 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#background {
+  background: url('https://d3mlfyygrfdi2i.cloudfront.net/dbe5/restore-elsewhere.jpg') no-repeat 50% 50% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+h1,h2#pic {
+color: #ffffff;
+  font-family: 'Poiret One', cursive;
+}
+
+div#welcome {
+  text-align: center;
+}

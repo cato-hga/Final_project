@@ -2,11 +2,10 @@
 
 <h1>Listing Recipients</h1>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
-    <tr>
+    <tr class="info">
       <th>Name</th>
-      <th>Birthday</th>
       <th>Relationship</th>
       <th>Notes</th>
       <th colspan="3"></th>
@@ -17,7 +16,6 @@
     <% @recipients.each do |recipient| %>
       <tr>
         <td><%= recipient.name %></td>
-        <td><%= recipient.birthday %></td>
         <td><%= recipient.relationship %></td>
         <td><%= recipient.notes %></td>
         <td><%= link_to 'Show', recipient %></td>

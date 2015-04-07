@@ -15,7 +15,7 @@ class GiftGiven < ActiveRecord::Base
   belongs_to :special_occasion
 
   validates :gift_name, presence: true
-  validates :special_occasion_id, presence: true
+  #validates :special_occasion_id, presence: true
   validates :recipient_id, presence: true
 
 end

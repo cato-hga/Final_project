@@ -59,6 +59,7 @@ class SpecialOccasionsController < ApplicationController
       format.html { redirect_to special_occasions_url, notice: 'Special occasion was successfully destroyed.' }
       format.json { head :no_content }
     end
+
   end
 
   private
@@ -69,6 +70,6 @@ class SpecialOccasionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_occasion_params
-      params.require(:special_occasion).permit(:name)
+      params.require(:special_occasion).permit(:name, :recipient_id)
     end
 end

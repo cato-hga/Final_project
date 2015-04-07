@@ -12,10 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name_of_Occasion %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+      Pick a recipient:
+      <%= f.select :recipient_id, Recipient.all.collect { |b| [b.name, b.id] }, {include_blank: ''} %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  class:"btn btn-primary"%>
   </div>
 <% end %>
