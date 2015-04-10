@@ -1,8 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Special Occasion</strong>
+  <%= @gift_given.special_occasion %>
+</p>
+
+<p>
   <strong>Gift name:</strong>
   <%= @gift_given.gift_name %>
+</p>
+
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @gift_given.gift_given_pic %>
 </p>
 
 <%= link_to 'Edit', edit_gift_given_path(@gift_given) %> |

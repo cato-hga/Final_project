@@ -8,6 +8,7 @@
 #  updated_at          :datetime         not null
 #  recipient_id        :integer
 #  special_occasion_id :integer
+#  gift_given_pic      :string
 #
 
 require 'test_helper'

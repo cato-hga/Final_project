@@ -64,4 +64,6 @@ group :development, :test do
   gem 'annotate', '~> 2.6.8'
 
   gem 'dotenv-rails'
+
+  gem 'better_errors', '~> 2.1.1'
 end

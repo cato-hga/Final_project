@@ -64,7 +64,6 @@
 <div class="container">
   <% if signed_in? %>
       <p id="sign" class="navbar-text navbar-right"> Signed in as, <%= link_to current_user.name  %></p>
-      <a><%= link_to 'Signout', signout_path, method: :delete %></a>
   <% end %>
 </div>
 <!-- Current User End-->
@@ -74,6 +73,13 @@
 <%= yield %>
 
 
+<% if signed_in? %>
+    <a id="sign_out"><%= link_to 'Signout', signout_path, method: :delete, class:'btn btn-danger pull-right' %></a>
+
+<% end %>
+
 
 </body>
+
+
 </html>

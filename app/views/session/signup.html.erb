@@ -1,11 +1,11 @@
 <center><h1>Sign Up </h1></center>
 
-<%= form_tag signup_entry_path, class:'form-control'  do %>
-    <%= text_field_tag 'user', '', class: 'form-control', placeholder: 'Name' %>
-    <%= text_field_tag 'user', '', class: 'form-control', placeholder: 'Email' %>
-    <%= text_field_tag  'user', '', class: 'form-control', placeholder: 'Username' %>
-    <%= password_field_tag 'user', '', class:'form-control', placeholder: 'Password'%>
-    <%= password_field_tag  'user', '', class: 'form-control', placeholder: 'Password Confirmation' %><br>
+<%= form_tag signup_path, class:'form-control'  do %>
+    <%= text_field_tag  'user[name]', nil, class: 'form-control', placeholder: 'Name' %>
+    <%= text_field_tag  'user[email]', nil, class: 'form-control', placeholder: 'Email' %>
+    <%= text_field_tag  'user[user_name]', nil, class: 'form-control', placeholder: 'Username' %>
+    <%= password_field_tag  'user[password]', nil, class:'form-control', placeholder: 'Password'%>
+    <%= password_field_tag  'user[password_confirmation]', nil, class: 'form-control', placeholder: 'Password Confirmation' %><br>
 
     <center><a><%= submit_tag 'Sign Up', class:'btn btn-primary' %></a></center><br>
 <% end %>

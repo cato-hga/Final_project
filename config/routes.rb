@@ -2,14 +2,14 @@ Rails.application.routes.draw do
   root 'session#welcome'
 
 
-  post 'signin', to: 'session#signin'
-  get 'signup', to: 'session#signup'
-  post 'signup_entry', to: 'session#signup_entry'
+
+   get 'signup', to: 'session#signup'
+  #get 'signup_create', to: 'session#signup_create'
+  post 'signup', to: 'session#signup_create'
+  post 'signup_create', to: 'session#signup_create'
+  get 'signin', to: 'session#signin'
+  post 'signin', to: 'session#signin_create'
   delete 'signout', to: 'session#signout'
-
-
-
-
 
 
   ActiveAdmin.routes(self)
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :recipients
 
   resources :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

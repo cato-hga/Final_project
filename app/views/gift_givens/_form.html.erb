@@ -1,5 +1,5 @@
-<%= form_for(@gift_given) do |f| %>
-  <% if @gift_given.errors.any? %>
+<%= form_for @gift_given, html: { multipart: true } do |f| %>
+<% if @gift_given.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@gift_given.errors.count, "error") %> prohibited this gift_given from being saved:</h2>
 
@@ -12,12 +12,24 @@
   <% end %>
 
     <div class="field">
-        <%= f.label :gift_name %><br>
-        <%= f.text_field :gift_name %>
+      <%= f.select :special_occasion_id, SpecialOccasion.all.collect {|s| [s.name, s.id]}, {include_blank: ''} %>
+    </div>
+
+    <div class="field">
+      Name of Gift:<br>
+      <%= f.text_field :gift_name %>
     </div>
 
     <div class="field">
      <%= f.select :recipient_id, Recipient.all.collect  {|r| [r.name, r.id]}, {include_blank: ''} %>
+    </div>
+
+
+
+    <div class="field">
+        Upload A Photo of Purchased Gift:
+      <%= f.file_field :gift_given_pic %>
+      <%= image_tag @gift_given.gift_given_pic_url  %>
     </div>
 
     <div class="actions">

@@ -14,6 +14,7 @@
     <% @gift_givens.each do |gift_given| %>
       <tr>
         <td><%= gift_given.gift_name %></td>
+        <td><%= image_tag gift_given.gift_given_pic.thumb.url %></td>
         <td><%= link_to 'Show', gift_given %></td>
         <td><%= link_to 'Edit', edit_gift_given_path(gift_given) %></td>
         <td><%= link_to 'Destroy', gift_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>

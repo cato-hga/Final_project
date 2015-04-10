@@ -11,22 +11,33 @@ class SessionController < ApplicationController
 
   end
 
-  def signup
-  end
-
-  def signup_entry
+  def signup_create
     user = User.new(user_params)
 
     if user.save
       session[:user_id] = user.id
       flash[:notice] = "You have successfully signed up."
     else
-      flash[:error] = "We were unable to sign you in with those credentials."
+
+      flash[:error] = "Unable to sign you up."
     end
     redirect_to root_path
   end
 
-  def signin
+  def signup
+
+
+  end
+
+
+
+
+
+    def signin
+
+    end
+
+  def signin_create
     user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
     if user
       session[:user_id] = user.id
@@ -39,7 +50,7 @@ class SessionController < ApplicationController
 
   def signout
     session[:user_id] = nil
-    flash[:notice] = "You are signed out!"
+    flash[:notice] = "You are signed out! Come back soon."
     redirect_to root_path
   end
 
@@ -47,7 +58,7 @@ class SessionController < ApplicationController
 
   def user_params
 
-    # params[:user].permit(:name, :email,  :password, :password_confirmation, :user_name)
+      params[:user].permit(:name, :email, :user_name,  :password, :password_confirmation )
 
   end
 
