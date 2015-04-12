@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Gift Givens</h1>
+<h1 id="font">Purchased Gifts</h1>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
       <th>Gift name</th>
@@ -25,4 +25,6 @@
 
 <br>
 
-<%= link_to 'New Gift given', new_gift_given_path %>
+<%= link_to 'New Gift', new_gift_given_path, class:'btn btn-default' %><br><br>
+<%= link_to 'Home Page', root_path, class:'btn btn-default' %>
+

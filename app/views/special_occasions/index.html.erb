@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Special Occasions</h1>
+<h1 id="font"> Special Occasions</h1>
 
-<table>
+<table class="table table-striped table-hover ">
   <thead>
     <tr>
-      <th>Special Occasion</th>
+      <strong><th class="font">Special Occasion</th></strong>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Special occasion', new_special_occasion_path %>
+<%= link_to 'New Special occasion', new_special_occasion_path, class:'btn btn-default' %><br><br>
+<%= link_to 'Home Page', root_path, class: 'btn btn-default' %>

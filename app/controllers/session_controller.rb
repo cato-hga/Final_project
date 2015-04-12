@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
 
-  skip_before_action :authenticate, only: [:welcome, :signin_entry, :signin, :signup, :signup_entry]
+  skip_before_action :authenticate, only: [:welcome, :signin_create,  :signup, :signup_create]
 
   def index
 
@@ -31,11 +31,6 @@ class SessionController < ApplicationController
 
 
 
-
-
-    def signin
-
-    end
 
   def signin_create
     user = User.find_by(email: params[:email]).try(:authenticate, params[:password])

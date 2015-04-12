@@ -1,5 +1,6 @@
 class SpecialOccasionsController < ApplicationController
   before_action :set_special_occasion, only: [:show, :edit, :update, :destroy]
+ # before_action :select_users
 
   # GET /special_occasions
   # GET /special_occasions.json
@@ -61,6 +62,10 @@ class SpecialOccasionsController < ApplicationController
     end
 
   end
+
+  #def select_users
+   # @select_user = User.all.collect {|user| [user.name, user.id]} if current_user
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,5 +1,6 @@
 class GiftGivensController < ApplicationController
   before_action :set_gift_given, only: [:show, :edit, :update, :destroy]
+  before_action :select_occasions, :select_recipients
 
   # GET /gift_givens
   # GET /gift_givens.json
@@ -60,6 +61,16 @@ class GiftGivensController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def select_occasions
+    @select_occasions = SpecialOccasion.all.collect { |special_occasion| [special_occasion.name, special_occasion.id] } if current_user
+  end
+
+  def select_recipients
+    @select_recipients = Recipient.all.collect {|gift_given| [gift_given.name, gift_given.id]} if current_user
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

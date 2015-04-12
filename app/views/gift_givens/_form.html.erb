@@ -12,27 +12,28 @@
   <% end %>
 
     <div class="field">
-      <%= f.select :special_occasion_id, SpecialOccasion.all.collect {|s| [s.name, s.id]}, {include_blank: ''} %>
+      <p class="font">Select Occasion for Purchased Gift:</p><br>
+      <%= f.select :special_occasion_id, @select_occasions, {include_blank: ''} %>
     </div>
 
     <div class="field">
-      Name of Gift:<br>
+      <p class="font">Name of Gift Purchased:</p><br>
       <%= f.text_field :gift_name %>
     </div>
 
     <div class="field">
-     <%= f.select :recipient_id, Recipient.all.collect  {|r| [r.name, r.id]}, {include_blank: ''} %>
+      <p class="font">Purchased for:</p>
+      <%= f.select :recipient_id, @select_recipients, {include_blank: ''} %>
     </div>
-
 
 
     <div class="field">
-        Upload A Photo of Purchased Gift:
+        <p class="font">Upload A Photo of Purchased Gift:</p>
       <%= f.file_field :gift_given_pic %>
-      <%= image_tag @gift_given.gift_given_pic_url  %>
+      <%= image_tag @gift_given.gift_given_pic  %>
     </div>
 
     <div class="actions">
-    <%= f.submit class:"btn btn-primary" %>
+    <p id="font"><%= f.submit class:"btn btn-default" %></p>
     </div>
 <% end %>

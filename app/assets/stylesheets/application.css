@@ -14,6 +14,15 @@
  *= require_self
  */
 p#sign {
-    color:#ffffff;
+    color: #cc3300;
 }
 
+h1#font{
+    font-family: 'Raleway', sans-serif;
+    color: #38566f;
+}
+
+h1#header {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
