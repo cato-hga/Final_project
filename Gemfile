@@ -66,4 +66,6 @@ group :development, :test do
   gem 'dotenv-rails'
 
   gem 'better_errors', '~> 2.1.1'
+
+  gem 'letter_opener', :group => :development
 end

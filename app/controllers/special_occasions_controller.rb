@@ -5,7 +5,7 @@ class SpecialOccasionsController < ApplicationController
   # GET /special_occasions
   # GET /special_occasions.json
   def index
-    @special_occasions = SpecialOccasion.all
+    @special_occasions = current_user.special_occasions
   end
 
   # GET /special_occasions/1
@@ -16,6 +16,7 @@ class SpecialOccasionsController < ApplicationController
   # GET /special_occasions/new
   def new
     @special_occasion = SpecialOccasion.new
+
   end
 
   # GET /special_occasions/1/edit
@@ -26,6 +27,8 @@ class SpecialOccasionsController < ApplicationController
   # POST /special_occasions.json
   def create
     @special_occasion = SpecialOccasion.new(special_occasion_params)
+
+    @special_occasion.user = current_user
 
     respond_to do |format|
       if @special_occasion.save

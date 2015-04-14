@@ -16,6 +16,10 @@ class SessionController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
+
+    # Tell the UserMailer to send a welcome email after save
+      UserMailer.welcome_email(user).deliver_later
+
       flash[:notice] = "You have successfully signed up."
     else
 

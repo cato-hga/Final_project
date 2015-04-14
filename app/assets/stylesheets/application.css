@@ -26,3 +26,7 @@ h1#header {
     font-family: 'Raleway', sans-serif;
     color: black;
 }
+
+.right {
+    text-align: right;
+}

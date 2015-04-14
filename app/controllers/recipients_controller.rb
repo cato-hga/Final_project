@@ -4,7 +4,7 @@ class RecipientsController < ApplicationController
   # GET /recipients
   # GET /recipients.json
   def index
-    @recipients = Recipient.all
+    @recipients = current_user.recipients
   end
 
   # GET /recipients/1
@@ -25,6 +25,9 @@ class RecipientsController < ApplicationController
   # POST /recipients.json
   def create
     @recipient = Recipient.new(recipient_params)
+
+   # This allows the current_user's recipients to be displayed only.
+    @recipient.user = current_user
 
     respond_to do |format|
       if @recipient.save

@@ -5,7 +5,7 @@ class GiftGivensController < ApplicationController
   # GET /gift_givens
   # GET /gift_givens.json
   def index
-    @gift_givens = GiftGiven.all
+    @gift_givens = current_user.gift_givens
   end
 
   # GET /gift_givens/1
@@ -26,6 +26,9 @@ class GiftGivensController < ApplicationController
   # POST /gift_givens.json
   def create
     @gift_given = GiftGiven.new(gift_given_params)
+
+    # This allows the current_user's purchased gifts to be displayed only.
+    @gift_given.user = current_user
 
     respond_to do |format|
       if @gift_given.save
@@ -63,11 +66,11 @@ class GiftGivensController < ApplicationController
   end
 
   def select_occasions
-    @select_occasions = SpecialOccasion.all.collect { |special_occasion| [special_occasion.name, special_occasion.id] } if current_user
+    @select_occasions = current_user.special_occasions.collect { |special_occasion| [special_occasion.name, special_occasion.id] } if current_user
   end
 
   def select_recipients
-    @select_recipients = Recipient.all.collect {|gift_given| [gift_given.name, gift_given.id]} if current_user
+    @select_recipients = current_user.recipients.collect {|gift_given| [gift_given.name, gift_given.id]} if current_user
   end
 
 
@@ -80,6 +83,6 @@ class GiftGivensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_given_params
-      params.require(:gift_given).permit(:gift_name, :recipient_id, :gift_given_pic, :special_occasion_id,  )
+      params.require(:gift_given).permit(:gift_name, :recipient_id, :gift_given_pic, :special_occasion_id )
     end
 end
