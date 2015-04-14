@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-  default from: 'hga813@gmail.com'
+  default from: 'notifications@pure-garden-7046.herokuapp.com'
 
   def welcome_email(user)
     @user = user
-    @url  = 'http://google.com'
+    @url  = 'https://pure-garden-7046.herokuapp.com'
     mail(to: @user.email, subject: 'Welcome to Giftgarage!')
   end
 end
