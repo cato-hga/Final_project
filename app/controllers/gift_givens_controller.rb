@@ -5,7 +5,7 @@ class GiftGivensController < ApplicationController
   # GET /gift_givens
   # GET /gift_givens.json
   def index
-    @gift_givens = current_user.gift_givens.page(params[:page])
+    @gift_givens = current_user.gift_givens.page(params[:page]).per(4)
   end
 
   # GET /gift_givens/1
