@@ -1,5 +1,5 @@
 // Place all the styles related to the Session controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body#background {
@@ -11,10 +11,14 @@ body#background {
 }
 
 h1, h2#pic {
-color: #ffffff;
-  display: inline;
-background-color: #0b0d0f;
+  span {
+    background-color: #d3d3d3;
+    padding: 5px;
+  }
+color: #0066cc;
+
   font-family: 'Poiret One', cursive;
+  text-align: center;
 }
 
 div#welcome{

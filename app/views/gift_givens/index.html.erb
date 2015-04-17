@@ -1,28 +1,33 @@
 <p id="notice"><%= notice %></p>
+<h1 id="font">Purchased Gifts</h1><br>
+    <% @gift_givens.in_groups_of(4).each do |group| %>
+        <div class="row">
 
-<h1 id="font">Purchased Gifts</h1>
-
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>Gift name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gift_givens.each do |gift_given| %>
-      <tr>
-        <td><%= gift_given.gift_name %></td>
-        <td><%= image_tag gift_given.gift_given_pic.thumb.url %></td>
-        <td><%= link_to 'Show', gift_given %></td>
-        <td><%= link_to 'Edit', edit_gift_given_path(gift_given) %></td>
-        <td><%= link_to 'Destroy', gift_given, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <% group.each do |gift_given| %>
+          <div class="col-md-3"><br>
+            <% if gift_given.present? %>
+                <div class="panel panel-primary">
+                  <div class="panel-heading"><%= gift_given.gift_name %></div>
+                  <div class="panel-body">
+                    <%= image_tag gift_given.gift_given_pic.thumb.url %><br>
+                    <u class="font">Name of Recipient:</u><br>
+                    <%= gift_given.recipient.name %><br>
+                    <u class="font">Name of Occasion:</u><br>
+                    <%= gift_given.special_occasion.name %>
+                  </div>
+                  <div class="panel-footer">
+                    <%= link_to 'Show', gift_given %>
+                    <%= link_to 'Edit', edit_gift_given_path(gift_given) %>
+                    <%= link_to 'Destroy', gift_given, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
+<%= paginate @gift_givens %>
 <br>
 
 <%= link_to 'New Gift', new_gift_given_path, class:'btn btn-default' %><br><br>

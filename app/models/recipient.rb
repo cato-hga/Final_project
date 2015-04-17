@@ -21,5 +21,5 @@ class Recipient < ActiveRecord::Base
 # Validations
   validates :name, presence: true
   validates :relationship, presence: true
-  validates :notes, presence: true
+  #validates :notes, presence: true
 end

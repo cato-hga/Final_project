@@ -11,21 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+    <div class="panel panel-primary">
+      <div class="row">
+        <div class="col-md-12"><br>
+          <div class="panel-body">
+              <div class="field">
+                <p class="font">Name:</p>
+                <%= f.text_field :name %>
+              </div>
 
 
-  <div class="field">
-    <%= f.label :relationship %><br>
-    <%= f.text_field :relationship %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br>
-    <%= f.text_area :notes %>
-  </div>
-  <div class="actions">
-    <%= f.submit class:"btn btn-default" %>
-  </div>
-<% end %>
+              <div class="field">
+                <p class="font">Relationship:</p>
+                <%= f.text_field :relationship %>
+              </div>
+               <div class="field">
+                 <p class="font">Notes:</p>
+                 <%= f.text_area :notes %>
+               </div>
+                <div class="panel-footer">
+                  <%= link_to 'Back', recipients_path, class:'btn btn-default' %><br><br>
+                  <%= link_to 'Home Page', root_path, class:'btn btn-default' %><br><br>
+                  <%= f.submit class:"btn btn-default" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <% end %>

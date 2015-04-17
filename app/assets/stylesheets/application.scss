@@ -1,0 +1,21 @@
+@import 'session';
+@import 'scaffolds';
+
+p#sign {
+    color: black;
+}
+
+.font{
+    font-family: 'Raleway', sans-serif;
+    color: #0066cc;
+    text-align: center !important;
+}
+
+h1#header {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+.right {
+    text-align: right;
+}
+

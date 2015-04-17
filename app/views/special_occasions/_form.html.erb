@@ -11,14 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <p class="font">Occasion Name:</p>
-    <%= f.text_field :name %>
-  </div>
+    <div class="panel panel-primary">
+      <div class="row">
+        <div class="col-md-12"><br>
+          <div class="panel-body">
+              <div class="field">
+                <p class="font">Occasion Name:</p>
+                <%= f.text_field :name %>
+              </div>
 
 
+            <div class="panel-footer">
+            <%= link_to 'Back', special_occasions_path, class:'btn btn-default' %><br><br>
+            <%= link_to 'Home Page', root_path, class:'btn btn-default' %><br><br>
 
-  <div class="actions">
-    <%= f.submit  class:"btn btn-default"%>
-  </div>
-<% end %>
+            <%= f.submit  class:"btn btn-default"%>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            <% end %>

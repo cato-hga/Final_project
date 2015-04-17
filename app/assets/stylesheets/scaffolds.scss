@@ -1,9 +1,10 @@
 body {
-  background-color: powderblue;
+  background-color: #d3d3d3;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
 }
 
 p, ol, ul, td {
@@ -32,6 +33,7 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+    text-align: center !important;
   }
 }
 

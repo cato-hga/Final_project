@@ -10,11 +10,19 @@
       </ul>
     </div>
   <% end %>
-
-    <div class="field">
+    <div class="panel panel-primary">
+      <div class="row">
+      <div class="col-md-12"><br>
+        <div class="panel-body">
+          <div class="field">
+            <p class="font">Upload A Photo of Purchased Gift:</p>
+            <%= f.file_field :gift_given_pic %>
+            <%= image_tag @gift_given.gift_given_pic  %>
+          </div>
+          <div class="field">
       <p class="font">Select Occasion for Purchased Gift:</p><br>
       <%= f.select :special_occasion_id, @select_occasions, {include_blank: ''} %>
-    </div>
+         </div>
 
     <div class="field">
       <p class="font">Name of Gift Purchased:</p><br>
@@ -27,13 +35,14 @@
     </div>
 
 
-    <div class="field">
-        <p class="font">Upload A Photo of Purchased Gift:</p>
-      <%= f.file_field :gift_given_pic %>
-      <%= image_tag @gift_given.gift_given_pic  %>
-    </div>
+          <div class="panel-footer">
+          <%= link_to 'Back', gift_givens_path, class:'btn btn-default' %><br><br>
+          <%= link_to 'Home Page', root_path, class:'btn btn-default' %><br><br>
+            <p id="font"><%= f.submit class:"btn btn-default" %></p>
+          </div>
 
-    <div class="actions">
-    <p id="font"><%= f.submit class:"btn btn-default" %></p>
+        </div>
+      </div>
+        </div>
     </div>
 <% end %>

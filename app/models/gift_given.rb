@@ -15,7 +15,7 @@
 class GiftGiven < ActiveRecord::Base
   belongs_to :recipient
   belongs_to :user
-  belongs_to :special_occasion
+  belongs_to :special_occasion, dependent: :destroy
 
   validates :gift_name, presence: true
   validates :recipient_id, presence: true
