@@ -10,6 +10,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string
 #  user_name       :string
+#  admin           :boolean
 #
 
 class User < ActiveRecord::Base
@@ -27,5 +28,9 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }
+
+
+  scope :admin, -> {where(admin:true)}
+  scope :nonadmin, -> {where(admin:false)}
 
 end

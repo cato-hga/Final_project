@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def authenticate_admin_user!
+    if !current_user.admin
+
+      redirect_to root_path
+
+    end
+  end
+
 
 
   def signed_in?

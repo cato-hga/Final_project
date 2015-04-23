@@ -8,6 +8,9 @@ ActiveAdmin.register User do
 
  permit_params :name, :email, :avatar, :password_digest, :user_name
 
+  scope :admin
+  scope :nonadmin
+
   #
   # or
   #
